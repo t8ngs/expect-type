@@ -89,6 +89,10 @@ Exige **Conventional Commits** (`feat:`, `fix:`, `docs:`, etc.).
 | `stale.yml` | cron diário | Marca/fecha issues e PRs inativos. |
 | `labels.yml` | manual (`workflow_dispatch`) | Sincroniza labels do repositório. |
 
+O workflow `checks.yml` não habilita o cache npm do `setup-node`: como
+`.npmrc` desativa a geração de `package-lock.json`, o setup com cache falharia
+antes de executar o commitlint.
+
 ## Ao alterar qualquer config
 
 > Atualize este documento **no mesmo commit** da mudança. Ver [`../../AGENT.md`](../../AGENT.md).

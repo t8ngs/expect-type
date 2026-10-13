@@ -56,6 +56,10 @@ release publicado  ──►  deploy.yml
 | [`release.yml`](../../.github/workflows/release.yml) | push em `main` | Cria o release PR (release-please) e, ao liberar, sobe o artefato `.tgz`. |
 | [`deploy.yml`](../../.github/workflows/deploy.yml) | `release` publicado | Publica o pacote no GitHub Packages e no npm. |
 
+O workflow [`checks.yml`](../../.github/workflows/checks.yml) valida os commits
+com commitlint. Ele não usa o cache npm do `setup-node`, pois o repositório não
+gera lockfile e o cache requer um lockfile.
+
 O workflow de release instala dependências com `npm install` (não há lockfile,
 por política do `.npmrc`) e só executa a instalação e o build quando uma nova
 release foi criada. O deploy também usa `npm install` nos dois jobs, pois `npm ci`
