@@ -84,7 +84,7 @@ Exige **Conventional Commits** (`feat:`, `fix:`, `docs:`, etc.).
 | Workflow | Gatilho | O que faz |
 |----------|---------|-----------|
 | `checks.yml` | push/PR em `main` | Valida commits com commitlint. |
-| `release.yml` | push em `main` | `release-please` cria PR de release e artefato `.tgz`. |
+| `release.yml` | push em `main` | `release-please` cria PR de release; quando a release é criada, instala dependências sem lockfile, gera `build/` e sobe o artefato `.tgz`. |
 | `deploy.yml` | release publicado | Publica no **GitHub Packages** e no **npm** (com provenance). |
 | `stale.yml` | cron diário | Marca/fecha issues e PRs inativos. |
 | `labels.yml` | manual (`workflow_dispatch`) | Sincroniza labels do repositório. |
