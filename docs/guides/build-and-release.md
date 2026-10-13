@@ -42,7 +42,7 @@ release.yml (release-please)
    │  cria/atualiza um "release PR" com changelog e bump de versão
    ▼
 merge do release PR
-   │  cria a tag e a GitHub Release, e faz upload do artefato .tgz
+   │  cria a tag e a GitHub Release; instala dependências, gera build/ e faz upload do .tgz
    ▼
 release publicado  ──►  deploy.yml
                           ├─ publica no GitHub Packages
@@ -55,6 +55,10 @@ release publicado  ──►  deploy.yml
 |----------|---------|-------|
 | [`release.yml`](../../.github/workflows/release.yml) | push em `main` | Cria o release PR (release-please) e, ao liberar, sobe o artefato `.tgz`. |
 | [`deploy.yml`](../../.github/workflows/deploy.yml) | `release` publicado | Publica o pacote no GitHub Packages e no npm. |
+
+O workflow instala dependências com `npm install` (não há lockfile, por política
+do `.npmrc`) e só executa a instalação e o build quando uma nova release foi
+criada. O build gera `build/` antes de `npm pack` empacotar o artefato.
 
 ### Secrets necessários
 
