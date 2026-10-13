@@ -63,7 +63,11 @@ gera lockfile e o cache requer um lockfile.
 O workflow de release instala dependências com `npm install` (não há lockfile,
 por política do `.npmrc`) e só executa a instalação e o build quando uma nova
 release foi criada. O deploy também usa `npm install` nos dois jobs, pois `npm ci`
-exige um lockfile. O build gera `build/` antes de `npm pack` empacotar o artefato.
+exige um lockfile. No job do GitHub Packages, o escopo `@t8ngs` é direcionado ao
+npm público durante a instalação para que dependências públicas desse escopo não
+exijam autenticação do GitHub Packages; a publicação do pacote continua usando
+o registry do GitHub Packages. O build gera `build/` antes de `npm pack`
+empacotar o artefato.
 
 ### Secrets necessários
 

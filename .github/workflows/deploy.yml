@@ -24,7 +24,7 @@ jobs:
            # Defaults to the user or organization that owns the workflow file
            scope: '@t8ngs'
        - name: Install dependencies
-         run: npm install
+         run: npm install --@t8ngs:registry=https://registry.npmjs.org
        - name: Build
          run: npm run build
        - name: Publish package
