@@ -84,7 +84,7 @@ Exige **Conventional Commits** (`feat:`, `fix:`, `docs:`, etc.).
 | Workflow | Gatilho | O que faz |
 |----------|---------|-----------|
 | `checks.yml` | push/PR em `main` | Valida commits com commitlint. |
-| `release.yml` | push em `main` | `release-please` cria PR de release; quando a release é criada, instala dependências sem lockfile, gera `build/` e sobe o artefato `.tgz`. |
+| `release.yml` | push em `main` | `release-please` usa o `GITHUB_TOKEN` com permissões de escrita, cria PR de release e, quando a release é criada, instala dependências sem lockfile, gera `build/` e sobe o artefato `.tgz`. |
 | `deploy.yml` | release publicado | Instala dependências sem lockfile, gera o build e publica no **GitHub Packages** e no **npm** (com provenance). A instalação do job do GitHub Packages usa o npm público para resolver o escopo `@t8ngs`; a publicação continua no GitHub Packages. |
 | `stale.yml` | cron diário | Marca/fecha issues e PRs inativos. |
 | `labels.yml` | manual (`workflow_dispatch`) | Sincroniza labels do repositório. |
