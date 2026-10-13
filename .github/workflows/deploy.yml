@@ -24,7 +24,7 @@ jobs:
            # Defaults to the user or organization that owns the workflow file
            scope: '@t8ngs'
        - name: Install dependencies
-         run: npm ci
+         run: npm install
        - name: Build
          run: npm run build
        - name: Publish package
@@ -48,7 +48,7 @@ jobs:
            scope: '@t8ngs'
 
        - name: Install dependencies
-         run: npm ci
+         run: npm install
        - name: Build
          run: npm run build
        - name: Publish package
