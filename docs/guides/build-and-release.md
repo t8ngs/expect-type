@@ -69,11 +69,13 @@ exijam autenticação do GitHub Packages; a publicação do pacote continua usan
 o registry do GitHub Packages. O build gera `build/` antes de `npm pack`
 empacotar o artefato.
 
-### Secrets necessários
+### Tokens necessários
 
-- `RELEASE_PLEASE_TOKEN` — usado pelo release-please.
+- `GITHUB_TOKEN` — fornecido automaticamente pelo GitHub Actions e usado pelo
+  release-please com permissões de escrita em conteúdo e pull requests,
+  declaradas no job de release, além da publicação no GitHub Packages e do
+  envio do artefato.
 - `NPM_TOKEN` — publicação no npm.
-- `GITHUB_TOKEN` — fornecido pelo GitHub Actions (publicação no GitHub Packages e upload do artefato).
 
 ## Versionamento
 
