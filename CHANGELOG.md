@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/t8ngs/expect-type/compare/v1.1.0...v1.2.0) (2026-10-18)
+
+
+### Features
+
+* **lock:** arquivo livk ([77062c1](https://github.com/t8ngs/expect-type/commit/77062c1cee99ed059885a60f2c74a272a0296ef6))
+
+
+### Bug Fixes
+
+* **ci:** resolvendo erros de ci ([513e7e4](https://github.com/t8ngs/expect-type/commit/513e7e4dc047aa99603d3104e4a09b8dc48a6e56))
+
 ## [1.1.0](https://github.com/t8ngs/expect-type/compare/v1.0.1...v1.1.0) (2026-10-18)
 
 
