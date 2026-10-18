@@ -71,10 +71,12 @@ empacotar o artefato.
 
 ### Tokens necessários
 
-- `GITHUB_TOKEN` — fornecido automaticamente pelo GitHub Actions e usado pelo
-  release-please com permissões de escrita em conteúdo e pull requests,
-  declaradas no job de release, além da publicação no GitHub Packages e do
-  envio do artefato.
+- `RELEASE_PLEASE_TOKEN` — token de acesso pessoal armazenado nos secrets do
+  repositório, com acesso de escrita a contents e pull requests, usado pelo
+  release-please para criar PRs de release. O `GITHUB_TOKEN` não pode criar PRs
+  quando a configuração do repositório proíbe essa ação para workflows.
+- `GITHUB_TOKEN` — fornecido automaticamente pelo GitHub Actions e usado para
+  enviar o artefato à GitHub Release e publicar no GitHub Packages.
 - `NPM_TOKEN` — publicação no npm.
 
 ## Versionamento
